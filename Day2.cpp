@@ -97,10 +97,48 @@ void pattern11(int n){
         cout << endl;
     }
 }
+void pattern12(int n){
+    if(n==0){
+        return;
+    }
+    pattern12(n - 1);
+    for (int i = 1; i <= n;i++){
+        cout << i << " ";
+    }
+    cout << endl;
+}
+void pattern13(int n){
+    if(n==1){
+        cout << 1<<endl;
+        return;
+    }
+
+    for (int i = 1; i <= n;i++){
+        cout << i << " ";
+    }
+    cout << endl;
+    pattern13(n - 1);
+
+    for (int i = 1; i <= n;i++){
+        cout << i << " ";
+    }
+    cout << endl;
+}
+void pattern14(int n){
+    if(n==0){
+        return;
+    }
+    pattern14(n - 1);
+    for (int i = 0; i < n;i++){
+        char st = 'A' + i;
+        cout << st  << " ";
+    }
+    cout << endl;
+}
 
 int main(){
     int n;
     cin >> n;
 
-    pattern11(n);
+    pattern14(n);
 }
