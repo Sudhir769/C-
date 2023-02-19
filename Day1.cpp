@@ -47,7 +47,6 @@ void printPrimes(int n){
         a++;
     }
 }
-
 // for loop
 int sum(int n){
     int sum = 0;
@@ -60,12 +59,32 @@ float fehrenheit(int n){
     float tempInFeh = (n*9 / 5)  + 32;
     return tempInFeh;
 }
+
 void pattern1(int n){
     for (int i = 1; i <= n;i++){
         for (int j = 1; j <= n;j++){
             cout <<j <<" ";
         }
         cout << endl;
+    }
+}
+void nCr(int n, int r){
+    int num = factorial(n);
+    int den = factorial(r)*factorial(n-r);
+    cout << num/den << endl;
+}
+int pow(int a, int b){
+    if(b==0)
+        return 1;
+    if(b==1)
+        return a;
+    return a*pow(a, b - 1);
+}
+void printPrimes(int a, int b){
+    for(int i=a;i<=b;i++){
+        if(isPrime(i)){
+            cout<<i<<endl;
+        }
     }
 }
 
@@ -92,5 +111,11 @@ int main(){
 
     // printPrimes(n);
 
-    pattern1(n);
+    // pattern1(n);
+
+    // nCr(5,1);
+
+    // cout << pow(2,10);
+
+    printPrimes(5, 25);
 }
