@@ -3,7 +3,8 @@ using namespace std;
 
 // Arrays
 void printArr(auto arr[], int n){
-    for(int i=0;i<n;i++){
+    for (int i = 0; i < n;i++)
+    {
         cout<<arr[i]<<" ";
     }
 }
@@ -47,11 +48,44 @@ void reverseArray(int arr[], int n){
     }
     printArr(arr, n);
 }
+void swapAlternate(int arr[], int n){
+    for (int i = 0; i < n;i+=2){
+        if(i+1<n){
+        swap(arr[i], arr[i + 1]);
+        }
+    }
+    return;
+}
+int binarySearch(int arr[], int n, int key){
+    int s = 0, e = n - 1;
+    int mid = s + (e - s) / 2;
+
+    while(s<=e){
+        if(arr[mid]==key){
+            return mid;
+        }else if (key>mid)
+        {
+            s = mid + 1;
+        }else{
+            e = mid - 1;
+        }
+        mid = s + (e - s) / 2;
+    }
+    return -1;
+}
+int vectorSum(vector<int> v){
+    int sum = 0;
+    for (int i = 0; i < v.size();i++){
+        sum = sum + v.at(i);
+    }
+    return sum;
+}
 
 int main(){
     // declaration
     int arr[5];
     int arr2[8] {1};
+    int arr4[9] = {1,2,3,4,5,6,7,8,9};
     int arr3[10] = {1,2,3,4,5,6,7,8,9,10};
 
     char ch[5] = {'a', 'b', 'c', 'd', 'e'};
@@ -61,5 +95,9 @@ int main(){
     // maxMin(arr3, 10);
     // arrSum(arr3, 10);
     // linearSearch(arr3, 10, 14);
-    reverseArray(arr3, 10);
+    // reverseArray(arr3, 10);
+    // swapAlternate(arr4, 9);
+    // printArr(arr4, 9);
+    // cout<< binarySearch(arr3, 10, 12);
+
 }
