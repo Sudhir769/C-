@@ -108,12 +108,100 @@ void Stack(){
     a.push(4);
     cout << a.top();
 }
+void Queue(){
+    queue<int> a;
+    queue<string> s;
+    s.push("Sudhir");
+    s.push("Maurya");
+    s.push("Shatru");
+    s.push("Shivani");
+
+    cout << "First Element :" << s.front() << endl;
+    cout << "Last Element :" << s.back() << endl;
+    s.pop();
+    cout << "First Element :" << s.front() << endl;
+    cout << "Size after pop :" << s.size() << endl;
+}
+void Priority_queue(){
+    priority_queue<int> a; //Max heap
+    priority_queue< int, vector<int>, greater<int>>mini;
+    priority_queue<int, vector<int>, less<int>>maxi;
+
+    maxi.push(4);
+    maxi.push(32);
+    maxi.push(21);
+    maxi.push(12);
+
+    int n = maxi.size();
+    for(int i=0;i<n;i++){
+        cout << maxi.top() << " ";
+        maxi.pop();
+    }
+    cout << endl;
+}
+void Set(){
+    set<int> s;
+
+    s.insert(7);
+    s.insert(8);
+    s.insert(7);
+    s.insert(7);
+    s.insert(5);
+    s.insert(6);
+    s.insert(6);
+    s.insert(5);
+    s.insert(2);
+
+    for(auto i:s){
+        cout << i << " ";
+    }
+    cout << endl;
+
+    set<int>::iterator it = s.begin();
+    it++;
+    s.erase(it);
+    
+    for(auto i:s){
+        cout << i << " ";
+    }
+    cout << endl;
+
+    cout <<"if ele is present :"<< s.count(6)<< endl;
+    cout << "if ele is not present :" << s.count(15) << endl;
+
+    set<int>::iterator itr =s.find(7);
+    cout << "value present at :" << *itr << endl;
+}
+void Map(){
+    map<int, string> m;
+
+    m[1] = "one";
+    m[2] = "two";
+    m[3] = "three";
+    m[4] = "four";
+    m.insert({5, "five"});
+
+    cout << "Erasing 3 :" << m.erase(3) << endl;
+    for(auto i:m){
+        cout << i.first << " " << i.second << endl;
+    }
+    cout << endl;
+
+    cout << "finding 4 :" << m.count(4) << endl;
+
+    auto it = m.find(4);
+    cout << "value present at 4 :" << it->second << endl;
+}
+
 
 int main(){
     // Array();
     // Vector();
     // Deque();
     // List();
-    Stack();
-
+    // Stack();
+    // Queue();
+    // Priority_queue();
+    // Set();
+    Map();
 }
