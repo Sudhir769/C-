@@ -52,5 +52,6 @@ for(auto i:v){
 cout << endl<<endl;
 
 sort(v.begin(), v.end());
-}
 
+
+}
