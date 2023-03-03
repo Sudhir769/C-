@@ -80,12 +80,56 @@ int vectorSum(vector<int> v){
     }
     return sum;
 }
+int largestSubarraySum(int arr[], int n){
+    int largestSum = 0;
+    for (int i = 0; i < n; i++){
+        for (int j = i; j < n;j++){
+            int subarraySum = 0;
+            for (int k = i; k <= j; k++){
+                subarraySum = subarraySum + arr[k];
+            }
+            largestSum = max(largestSum, subarraySum);
+        }
+    }
+    return largestSum;
+}
+int largestSubarraySum2(int arr[], int n){
+    int prefix[100] = {0};
+    prefix[0] = arr[0];
+
+    for (int i = 1;  i <= n;i++){
+        prefix[i] = prefix[i - 1] + arr[i];
+    }
+    int largestSum = 0;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i; j < n; j++){
+            int subarraySum = i > 0 ? prefix[j] - prefix[i - 1] : prefix[j];
+            largestSum = max(largestSum, subarraySum);
+            }
+        }
+    return largestSum;
+}
+// kadane's algorithm
+int maximum_subarray_sum(int arr[], int n){
+    int max_sum = 0;
+    int current_sum = 0;
+
+    for (int i = 0; i < n - 1;i++){
+        current_sum = current_sum + arr[i];
+        if(current_sum<0){
+            current_sum = 0;
+        }
+        max_sum = max(max_sum, current_sum);
+    }
+    return max_sum;
+}
 
 int main(){
     // declaration
-    int arr[5];
+    int arr[] = {-2, 3, 4, -1, 5, -12, 6, 1, 3};
     int arr2[8] {1};
-    int arr4[9] = {1,2,3,4,5,6,7,8,9};
+    int arr4[9] = {1,2,3,-4,5,-6,7,8,9};
     int arr3[10] = {1,2,3,4,5,6,7,8,9,10};
 
     char ch[5] = {'a', 'b', 'c', 'd', 'e'};
@@ -99,5 +143,7 @@ int main(){
     // swapAlternate(arr4, 9);
     // printArr(arr4, 9);
     // cout<< binarySearch(arr3, 10, 12);
-
+    // cout << largestSubarraySum(arr4, 9);
+    // cout << largestSubarraySum2(arr4, 9);
+    cout << maximum_subarray_sum(arr, 9);
 }
