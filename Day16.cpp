@@ -51,4 +51,5 @@ int main(){
     int n;
     cin >> n;
     PrintNums(n);
+    cout << endl;
 }
