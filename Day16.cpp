@@ -22,6 +22,7 @@ void printFib(int n){
         cout << Fibonacci(i) <<" ";
     }
 }
+
 int Pow(int a, int b){
     if(b==0){
         return 1;
