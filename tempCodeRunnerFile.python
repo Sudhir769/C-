@@ -1,0 +1,5 @@
+print("hello world")
+
+list=["sudhir", "nushant", "Arwind"]
+for i in list:
+    print(i)
