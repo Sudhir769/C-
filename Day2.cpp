@@ -140,5 +140,7 @@ int main(){
     int n;
     cin >> n;
 
-    pattern14(n);
+    // pattern2(n);
+    // pattern3(n);
+    pattern4(n);
 }

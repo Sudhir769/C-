@@ -41,7 +41,7 @@ string abcd = "abcd";
 cout << "string-> "<< abcd <<endl;
 
 reverse(abcd. begin() ,abcd.end());
-cout << "string-> "<< abcd <<endl<<endl;
+cout << "after reverse string-> "<< abcd <<endl<<endl;
 
 rotate(v.begin(),v.begin()+1,v.end());
 cout<<"after rotate"<<endl<<endl;
