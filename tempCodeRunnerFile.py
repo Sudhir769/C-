@@ -1,4 +1,5 @@
 
-# print(marks)
-# print(marks.index(92))
-# print(marks.count(94))
+print(name.find('M'))
+print(name.find('hir'))
+print('u' in name)
+print(name.replace("Sudhir", "Patrick"))

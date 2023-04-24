@@ -25,8 +25,9 @@
 # sum= First + Second
 # print("the sum is :" ,sum)
 
-# Strings
+# # Strings
 # name= "Sudhir Maurya"
+# print(name)
 # print(name.find('M'))
 # print(name.find('hir'))
 # print('u' in name)
@@ -237,97 +238,97 @@
 # values = list(students.values())
 # print("Values in the dictionary:", values)
 
-# Functions
-# define a function that calculates the area of a rectangle
-def area_of_rectangle(length, width):
-    area = length * width
-    return area
+# # Functions
+# # define a function that calculates the area of a rectangle
+# def area_of_rectangle(length, width):
+#     area = length * width
+#     return area
 
-# define a function that calculates the circumference of a circle
-def circumference_of_circle(radius):
-    pi = 3.14159
-    circumference = 2 * pi * radius
-    return circumference
+# # define a function that calculates the circumference of a circle
+# def circumference_of_circle(radius):
+#     pi = 3.14159
+#     circumference = 2 * pi * radius
+#     return circumference
 
-# define a function that calculates the volume of a cylinder
-def volume_of_cylinder(radius, height):
-    pi = 3.14159
-    base_area = pi * radius ** 2
-    volume = base_area * height
-    return volume
+# # define a function that calculates the volume of a cylinder
+# def volume_of_cylinder(radius, height):
+#     pi = 3.14159
+#     base_area = pi * radius ** 2
+#     volume = base_area * height
+#     return volume
 
-# get input from user
-length = float(input("Enter the length of the rectangle: "))
-width = float(input("Enter the width of the rectangle: "))
-radius = float(input("Enter the radius of the circle: "))
-height = float(input("Enter the height of the cylinder: "))
+# # get input from user
+# length = float(input("Enter the length of the rectangle: "))
+# width = float(input("Enter the width of the rectangle: "))
+# radius = float(input("Enter the radius of the circle: "))
+# height = float(input("Enter the height of the cylinder: "))
 
-# calculate and print the area of the rectangle
-rectangle_area = area_of_rectangle(length, width)
-print("The area of the rectangle is:", rectangle_area)
+# # calculate and print the area of the rectangle
+# rectangle_area = area_of_rectangle(length, width)
+# print("The area of the rectangle is:", rectangle_area)
 
-# calculate and print the circumference of the circle
-circle_circumference = circumference_of_circle(radius)
-print("The circumference of the circle is:", circle_circumference)
+# # calculate and print the circumference of the circle
+# circle_circumference = circumference_of_circle(radius)
+# print("The circumference of the circle is:", circle_circumference)
 
-# calculate and print the volume of the cylinder
-cylinder_volume = volume_of_cylinder(radius, height)
-print("The volume of the cylinder is:", cylinder_volume)
+# # calculate and print the volume of the cylinder
+# cylinder_volume = volume_of_cylinder(radius, height)
+# print("The volume of the cylinder is:", cylinder_volume)
 
-# define a function that checks if a number is even
-def is_even(number):
-    if number % 2 == 0:
-        return True
-    else:
-        return False
+# # define a function that checks if a number is even
+# def is_even(number):
+#     if number % 2 == 0:
+#         return True
+#     else:
+#         return False
 
-# define a function that checks if a number is odd
-def is_odd(number):
-    if number % 2 != 0:
-        return True
-    else:
-        return False
+# # define a function that checks if a number is odd
+# def is_odd(number):
+#     if number % 2 != 0:
+#         return True
+#     else:
+#         return False
 
-# define a function that calculates the factorial of a number
-def factorial(number):
-    if number == 0:
-        return 1
-    else:
-        return number * factorial(number - 1)
+# # define a function that calculates the factorial of a number
+# def factorial(number):
+#     if number == 0:
+#         return 1
+#     else:
+#         return number * factorial(number - 1)
 
-# define a function that converts Celsius to Fahrenheit
-def celsius_to_fahrenheit(celsius):
-    fahrenheit = celsius * 9/5 + 32
-    return fahrenheit
+# # define a function that converts Celsius to Fahrenheit
+# def celsius_to_fahrenheit(celsius):
+#     fahrenheit = celsius * 9/5 + 32
+#     return fahrenheit
 
-# define a function that calculates the nth Fibonacci number
-def fibonacci(n):
-    if n <= 1:
-        return n
-    else:
-        return fibonacci(n-1) + fibonacci(n-2)
+# # define a function that calculates the nth Fibonacci number
+# def fibonacci(n):
+#     if n <= 1:
+#         return n
+#     else:
+#         return fibonacci(n-1) + fibonacci(n-2)
 
-# get input from user
-number = int(input("Enter a number: "))
-celsius = float(input("Enter a temperature in Celsius: "))
-n = int(input("Enter a positive integer n: "))
+# # get input from user
+# number = int(input("Enter a number: "))
+# celsius = float(input("Enter a temperature in Celsius: "))
+# n = int(input("Enter a positive integer n: "))
 
-# check if the number is even or odd
-if is_even(number):
-    print(number, "is even")
-else:
-    print(number, "is odd")
+# # check if the number is even or odd
+# if is_even(number):
+#     print(number, "is even")
+# else:
+#     print(number, "is odd")
 
-# calculate and print the factorial of the number
-factorial_number = factorial(number)
-print("The factorial of", number, "is", factorial_number)
+# # calculate and print the factorial of the number
+# factorial_number = factorial(number)
+# print("The factorial of", number, "is", factorial_number)
 
-# convert Celsius to Fahrenheit and print the result
-fahrenheit = celsius_to_fahrenheit(celsius)
-print(celsius, "degrees Celsius is equivalent to", fahrenheit, "degrees Fahrenheit")
+# # convert Celsius to Fahrenheit and print the result
+# fahrenheit = celsius_to_fahrenheit(celsius)
+# print(celsius, "degrees Celsius is equivalent to", fahrenheit, "degrees Fahrenheit")
 
-# calculate and print the nth Fibonacci number
-fibonacci_number = fibonacci(n)
-print("The", n, "th Fibonacci number is", fibonacci_number)
+# # calculate and print the nth Fibonacci number
+# fibonacci_number = fibonacci(n)
+# print("The", n, "th Fibonacci number is", fibonacci_number)
 
 
