@@ -1,6 +1,6 @@
 # print("My First Program")
 
-# variables
+# # variables
 # name ="Tony Stark"
 # age = 30
 # print("My name is ", name , "and I'm", age , "years old")
@@ -275,60 +275,60 @@
 # cylinder_volume = volume_of_cylinder(radius, height)
 # print("The volume of the cylinder is:", cylinder_volume)
 
-# # define a function that checks if a number is even
-# def is_even(number):
-#     if number % 2 == 0:
-#         return True
-#     else:
-#         return False
+# define a function that checks if a number is even
+def is_even(number):
+    if number % 2 == 0:
+        return True
+    else:
+        return False
 
-# # define a function that checks if a number is odd
-# def is_odd(number):
-#     if number % 2 != 0:
-#         return True
-#     else:
-#         return False
+# define a function that checks if a number is odd
+def is_odd(number):
+    if number % 2 != 0:
+        return True
+    else:
+        return False
 
-# # define a function that calculates the factorial of a number
-# def factorial(number):
-#     if number == 0:
-#         return 1
-#     else:
-#         return number * factorial(number - 1)
+# define a function that calculates the factorial of a number
+def factorial(number):
+    if number == 0:
+        return 1
+    else:
+        return number * factorial(number - 1)
 
-# # define a function that converts Celsius to Fahrenheit
-# def celsius_to_fahrenheit(celsius):
-#     fahrenheit = celsius * 9/5 + 32
-#     return fahrenheit
+# define a function that converts Celsius to Fahrenheit
+def celsius_to_fahrenheit(celsius):
+    fahrenheit = celsius * 9/5 + 32
+    return fahrenheit
 
-# # define a function that calculates the nth Fibonacci number
-# def fibonacci(n):
-#     if n <= 1:
-#         return n
-#     else:
-#         return fibonacci(n-1) + fibonacci(n-2)
+# define a function that calculates the nth Fibonacci number
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
 
-# # get input from user
-# number = int(input("Enter a number: "))
-# celsius = float(input("Enter a temperature in Celsius: "))
-# n = int(input("Enter a positive integer n: "))
+# get input from user
+number = int(input("Enter a number: "))
+celsius = float(input("Enter a temperature in Celsius: "))
+n = int(input("Enter a positive integer n: "))
 
-# # check if the number is even or odd
-# if is_even(number):
-#     print(number, "is even")
-# else:
-#     print(number, "is odd")
+# check if the number is even or odd
+if is_even(number):
+    print(number, "is even")
+else:
+    print(number, "is odd")
 
-# # calculate and print the factorial of the number
-# factorial_number = factorial(number)
-# print("The factorial of", number, "is", factorial_number)
+# calculate and print the factorial of the number
+factorial_number = factorial(number)
+print("The factorial of", number, "is", factorial_number)
 
-# # convert Celsius to Fahrenheit and print the result
-# fahrenheit = celsius_to_fahrenheit(celsius)
-# print(celsius, "degrees Celsius is equivalent to", fahrenheit, "degrees Fahrenheit")
+# convert Celsius to Fahrenheit and print the result
+fahrenheit = celsius_to_fahrenheit(celsius)
+print(celsius, "degrees Celsius is equivalent to", fahrenheit, "degrees Fahrenheit")
 
-# # calculate and print the nth Fibonacci number
-# fibonacci_number = fibonacci(n)
-# print("The", n, "th Fibonacci number is", fibonacci_number)
+# calculate and print the nth Fibonacci number
+fibonacci_number = fibonacci(n)
+print("The", n, "th Fibonacci number is", fibonacci_number)
 
 

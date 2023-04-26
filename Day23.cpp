@@ -111,24 +111,52 @@ public:
 };
 
 // polymorphism
-class Shape {
+class Shapez {
 public:
     virtual void draw() = 0;
 };
 
-class Circle : public Shape {
+class Circle : public Shapez {
 public:
     void draw() {
         cout << "Drawing a circle" << endl;
     }
 };
 
-class Square : public Shape {
+class Square : public Shapez {
 public:
     void draw() {
         cout << "Drawing a square" << endl;
     }
 };
+
+// Abstract class
+class Shape {
+public:
+    virtual double area() = 0;
+    virtual double perimeter() = 0;
+};
+
+class Rectangle : public Shape {
+private:
+    double length;
+    double width;
+
+public:
+    Rectangle(double l, double w) {
+        length = l;
+        width = w;
+    }
+
+    double area() {
+        return length * width;
+    }
+
+    double perimeter() {
+        return 2 * (length + width);
+    }
+};
+
 
 
 // Main function
@@ -174,11 +202,22 @@ int main() {
     cout << endl;
 
     // polymorphism
-    Shape* shapes[2];
+    Shapez* shapes[2];
     shapes[0] = new Circle();
     shapes[1] = new Square();
     for (int i = 0; i < 2; i++) {
         shapes[i]->draw();
     }
+    delete shapes[0];
+    delete shapes[1];
+    cout << endl;
+
+    // Abstraction
+    Shape* shape = new Rectangle(5, 7);
+
+    cout << "Area: " << shape->area() << endl;
+    cout << "Perimeter: " << shape->perimeter() << endl;
+
+    delete shape;
     return 0;
 }
