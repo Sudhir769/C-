@@ -59,7 +59,6 @@ float fehrenheit(int n){
     float tempInFeh = (n*9 / 5)  + 32;
     return tempInFeh;
 }
-
 void pattern1(int n){
     for (int i = 1; i <= n;i++){
         for (int j = 1; j <= n;j++){
@@ -86,6 +85,11 @@ void printPrimes(int a, int b){
             cout<<i<<endl;
         }
     }
+}
+void swap(int *x,int *y){
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
 int main(){
@@ -117,5 +121,10 @@ int main(){
 
     // cout << pow(2,10);
 
-    printPrimes(5, 25);
+    // printPrimes(5, 25);
+
+    int x = 65, y = 43;
+    swap(&x, &y);
+    cout << x <<" "<< y;
 }
+
