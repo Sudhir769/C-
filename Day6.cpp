@@ -2,7 +2,6 @@
 using namespace std;
 
 // selection sort
-
 void printArr(auto arr[], int n){
     for (int i = 0; i < n;i++)
     {

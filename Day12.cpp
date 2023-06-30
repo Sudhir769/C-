@@ -69,10 +69,11 @@ int main(){
     // PointerFunction(p);
     // cout << p << endl;
     // cout << value << endl;
+
     // update(p);
     // cout << p << endl;
     // cout << value << endl;
 
-    int arr[5] = {1, 2, 3, 4, 5};
-    cout << "Sum :" << getSum(arr, 5);
+    // int arr[5] = {1, 2, 3, 4, 5};
+    // cout << "Sum :" << getSum(arr, 5);
 }
