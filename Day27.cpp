@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Binary Tree
 class node{
     public:
         int data;
@@ -60,10 +61,94 @@ void levelOrderTraversal(node* root){
     }
 }
 
+void builFromLevelorder(node* &root)
+{
+    queue<node *> q;
+    cout << "enter data for root :" << endl;
+    int data;
+    cin >> data;
+    root = new node(data);
+    q.push(root);
+
+    while (!q.empty())
+    {
+        node *temp = q.front();
+        q.pop();
+
+        cout << "Enter data for right node :" << endl;
+        int leftData;
+        cin >> leftData;
+        if (leftData != -1)
+        { // check whether user input is valid or not, otherwise it will create
+            temp->left = new node(leftData);
+            q.push(temp->left);
+        }
+
+        cout << "Enter data for right node :" << endl;
+        int rightData;
+        cin >> rightData;
+        if (rightData != -1)
+        { // check whether user input is valid or not, otherwise it will create
+            temp->right = new node(rightData);
+            q.push(temp->right);
+        }
+    }
+}
+
+void inOrderTraversal(node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    inOrderTraversal(root->left);
+    cout << root->data << " ";
+    inOrderTraversal(root->right);
+}
+
+void preOrderTraversal(node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    cout << root->data << " ";
+    inOrderTraversal(root->left);
+    inOrderTraversal(root->right);
+}
+
+void postOrderTraversal(node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    inOrderTraversal(root->left);
+    inOrderTraversal(root->right);
+    cout << root->data << " ";
+}
+
 int main(){
         node *root = NULL;
+
+        // 1 3 5 7 11 13 17 -1 -1 -1 -1 -1 -1
+        builFromLevelorder(root);
+
         // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
-        root = buildTree(root);
-        cout << "Printing level order traversal :"<<endl;
+        // root = buildTree(root);
+
+        cout << "Printing Level Order traversal :" << endl;
         levelOrderTraversal(root);
+
+        cout << "Printing inOrder traversal :" << endl;
+        inOrderTraversal(root);
+
+        cout << "Printing pre order traversal :" << endl;
+        preOrderTraversal(root);
+
+        cout << "Printing post order traversal :" << endl;
+        postOrderTraversal(root);
 }
