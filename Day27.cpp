@@ -102,6 +102,7 @@ void inOrderTraversal(node *root)
         return;
     }
 
+    // LNR
     inOrderTraversal(root->left);
     cout << root->data << " ";
     inOrderTraversal(root->right);
@@ -114,6 +115,7 @@ void preOrderTraversal(node *root)
         return;
     }
 
+    // NLR
     cout << root->data << " ";
     inOrderTraversal(root->left);
     inOrderTraversal(root->right);
@@ -125,11 +127,14 @@ void postOrderTraversal(node *root)
     {
         return;
     }
-
+    
+    // LRN
     inOrderTraversal(root->left);
     inOrderTraversal(root->right);
     cout << root->data << " ";
 }
+
+
 
 int main(){
         node *root = NULL;
@@ -151,4 +156,5 @@ int main(){
 
         cout << "Printing post order traversal :" << endl;
         postOrderTraversal(root);
+        
 }
