@@ -59,8 +59,8 @@ void preOrderTraversal(Node *root)
     }
 
     cout << root->data << " ";
-    inOrderTraversal(root->left);
-    inOrderTraversal(root->right);
+    preOrderTraversal(root->left);
+    preOrderTraversal(root->right);
 }
 
 void postOrderTraversal(Node *root)
@@ -70,8 +70,8 @@ void postOrderTraversal(Node *root)
         return;
     }
 
-    inOrderTraversal(root->left);
-    inOrderTraversal(root->right);
+    postOrderTraversal(root->left);
+    postOrderTraversal(root->right);
     cout << root->data << " ";
 }
 
@@ -180,21 +180,28 @@ int main(){
     cout << " Enter data to create BST :" << endl;
     takeInput(root);
 
-    // cout << "Printing Level Order traversal :" << endl;
+    cout << "Printing Level Order traversal :" << endl;
     levelOrderTraversal(root);
+    cout << endl;
 
-    // cout << "Printing inOrder traversal :" << endl;
-    // inOrderTraversal(root);
+    cout << "Printing inOrder traversal :" << endl;
+    inOrderTraversal(root);
+    cout << endl;
+    cout << endl;
 
-    // cout << "Printing pre order traversal :" << endl;
-    // preOrderTraversal(root);
+    cout << "Printing pre order traversal :" << endl;
+    preOrderTraversal(root);
+    cout << endl;
+    cout << endl;
 
-    // cout << "Printing post order traversal :" << endl;
-    // postOrderTraversal(root);
+    cout << "Printing post order traversal :" << endl;
+    postOrderTraversal(root);
+    cout << endl;
+    cout << endl;
 
-    // cout << "Minimum Value in BST is :" << minValue(root)->data << endl;
-    // cout << "Maximum Value in BST is :" << maxValue(root)->data << endl;
+    cout << "Minimum Value in BST is :" << minValue(root)->data << endl;
+    cout << "Maximum Value in BST is :" << maxValue(root)->data << endl;
 
-    root = deleteFromBST(root, 50);
-    levelOrderTraversal(root);
+    // root = deleteFromBST(root, 50);
+    // levelOrderTraversal(root);
 }
