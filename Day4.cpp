@@ -8,6 +8,18 @@ void printArr(auto arr[], int n){
         cout<<arr[i]<<" ";
     }
 }
+void moveZeroes(int arr[], int n){
+    int current = 0;
+    for (int i = 0; i < n;i++){
+        if(arr[i] != 0){
+            arr[current] = arr[i];
+            current++;
+        }
+    }
+    while(current<n){
+        arr[current++]=0;
+    }
+}
 void maxMin(int arr[], int n){
     int maxi = INT_MIN;
     int mini = INT_MAX;
@@ -124,16 +136,28 @@ int maximum_subarray_sum(int arr[], int n){
     }
     return max_sum;
 }
+int removeDuplicates(int nums[], int n){ // from sorted array
+    int s = 0;
+    int e = 1;
+    while(e<n){
+        if(nums[s] != nums[e]){
+            s++;
+            nums[s] = nums[e];
+        }
+        e++;
+    }
+    return s + 1;
+}
 
 int main(){
     // declaration
-    int arr[] = {-2, 3, 4, -1, 5, -12, 6, 1, 3};
-    int arr2[8] {1};
-    int arr4[9] = {1,2,3,-4,5,-6,7,8,9};
-    int arr3[10] = {1,2,3,4,5,6,7,8,9,10};
+    // int arr[] = {-2, 3, 4, -1, 5, -12, 6, 1, 3};
+    // int arr2[8] {1};
+    // int arr4[9] = {1,2,3,-4,5,-6,7,8,9};
+    // int arr3[10] = {1,2,3,4,5,6,7,8,9,10};
 
-    char ch[5] = {'a', 'b', 'c', 'd', 'e'};
-    string name[2]={"Sudhir", "Maurya"};
+    // char ch[5] = {'a', 'b', 'c', 'd', 'e'};
+    // string name[2]={"Sudhir", "Maurya"};
 
     // printArr(arr3, 10);
     // maxMin(arr3, 10);
@@ -145,5 +169,11 @@ int main(){
     // cout<< binarySearch(arr3, 10, 12);
     // cout << largestSubarraySum(arr4, 9);
     // cout << largestSubarraySum2(arr4, 9);
-    cout << maximum_subarray_sum(arr, 9);
+    // cout << maximum_subarray_sum(arr, 9);
+    // moveZeroes(nums, n);
+    int nums[5] = {1,1,3,3,5};
+    int n = sizeof(nums) / sizeof(0);
+    cout << removeDuplicates(nums, n);
+    // printArr(nums, 8);
+
 }
