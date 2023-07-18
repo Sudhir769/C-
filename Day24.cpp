@@ -17,12 +17,12 @@ class Node{
             int value = this->data;
             if(this->next !=NULL){
                 delete next;
-                this->next == NULL;
+                this->next = NULL;
             }        
         }
 };
 
-void insertAtHead(Node *head, int d){
+void insertAtHead(Node* &head, int d){
     Node *temp = new Node(d);
     temp->next = head;
     head = temp;
@@ -65,7 +65,7 @@ struct node{
     node *next;
 };
 
-void printList(node *head){
+void printList(Node *head){
     while(head!=NULL){
         cout << head->data << " ";
         head = head->next;
@@ -123,20 +123,26 @@ void deleteNode(node* &head, int pos){
 }
 
 
+int main() {
+    // Create nodes
+    Node* node1 = new Node(1);
+    Node* node2 = new Node(2);
+    Node* node3 = new Node(3);
 
-int main(){
-    // struct main
-    node *head = new node();
-    head->data = 3;
-    head->next = NULL;
+    // Link nodes together
+    node1->next = node2;
+    node2->next = node3;
 
-    pushFront(head,2);
-    pushFront(head,1);
-    pushEnd(head,5);
-    pushEnd(head, 4);
-    pushAfter(head->next->next->next->next, 15);
+    // Print data in the linked list
+    Node* curr = node1;
+    while (curr != NULL) {
+        std::cout << curr->data << " ";
+        curr = curr->next;
+    }
+    std::cout << std::endl;
 
-    deleteNode(head, 2);
-
-    printList(head);
+    // Delete nodes
+    delete node1;
+    
+    return 0;
 }
