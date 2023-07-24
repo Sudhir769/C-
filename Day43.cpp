@@ -268,11 +268,168 @@ void rotateByKMain(){
 
 }
 
+bool isPalindrome(Node* head){
+        Node *slow = head;
+        Node *fast = head;
+
+        while(fast && fast->next){
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        Node *curr = slow->next;
+        Node *prev = slow;
+        slow->next = NULL;
+
+        while(curr){
+            Node *nextNode = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+
+        Node *head1 = head;
+        Node *head2 = prev;
+
+        while(head2){
+            if(head1->val != head2->val){
+                return false;
+            }
+            head1 = head1->next;
+            head2 = head2->next;
+
+        }
+        return true;
+}
+
+void isPalindromeMain(){
+    LinkedList ll1;
+        ll1.insertAtTail(1);
+        ll1.insertAtTail(2);
+        ll1.insertAtTail(3);
+        ll1.insertAtTail(3);
+        ll1.insertAtTail(2);
+        ll1.insertAtTail(1);
+        ll1.display();
+        cout<<isPalindrome(ll1.head);
+}
+
+// 1->2->3->4->5->6->NULL
+// 1->3->5->2->4->6->NULL
+Node* oddEvenLL(Node* &head){
+
+    if(!head){
+        return head;
+    }
+
+    Node *evenHead = head->next;
+    Node *evenptr = evenHead;
+    Node *oddptr = head;
+
+    while(evenptr && evenptr->next){
+        oddptr->next = oddptr->next ->next;
+        evenptr->next = evenptr->next ->next;
+        oddptr = oddptr->next;
+        evenptr = evenptr->next;
+    }
+    oddptr->next = evenHead;
+    return head;
+}
+
+void oddEvenLLMain(){
+    LinkedList ll1;
+        ll1.insertAtTail(1);
+        ll1.insertAtTail(2);
+        ll1.insertAtTail(3);
+        ll1.insertAtTail(4);
+        ll1.insertAtTail(5);
+        ll1.insertAtTail(6);
+        ll1.display();
+
+        ll1.head = oddEvenLL(ll1.head);
+        ll1.display();
+}
+
+// 1->2->3->4->5->6->NULL
+// 1->6->2->5->3->4->NULL
+Node* reorderLinkedList(Node* &head){
+        Node *fast = head;
+        Node *slow = head;
+
+        while(fast && fast->next){
+            fast = fast->next->next;
+            slow = slow->next;
+        }
+        Node *curr = slow->next;
+        Node *prev = slow;
+        slow->next = NULL;
+
+        while(curr){
+            Node *temp = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        Node *head1 = head;
+        Node *head2 = prev;
+
+        while(head1!=head2){
+            Node *temp = head1->next;
+            head1->next = head2;
+            head1 = head2;
+            head2 = temp;
+        }
+        return head;
+}
+
+// 1->2->3->4->5->6->NULL
+// 2->1->4->3->6->5->NULL
+void reorderLinkedListMain(){
+    LinkedList ll1;
+        ll1.insertAtTail(1);
+        ll1.insertAtTail(2);
+        ll1.insertAtTail(3);
+        ll1.insertAtTail(4);
+        ll1.insertAtTail(5);
+        ll1.insertAtTail(6);
+        ll1.display();
+
+        ll1.head = reorderLinkedList(ll1.head);
+        ll1.display();
+}
+
+Node* swapAdjacent(Node* &head){
+    if(head==NULL || head->next==NULL){
+            return head;
+    }
+        Node *secondNode = head->next;
+        Node *newnode = swapAdjacent(secondNode->next);
+        secondNode->next = head;
+        head->next = newnode;
+        return secondNode;
+}
+
+void swapAdjacentMain(){
+    LinkedList ll1;
+        ll1.insertAtTail(1);
+        ll1.insertAtTail(2);
+        ll1.insertAtTail(3);
+        ll1.insertAtTail(4);
+        ll1.insertAtTail(5);
+        ll1.insertAtTail(6);
+        ll1.display();
+
+        ll1.head = swapAdjacent(ll1.head);
+        ll1.display();
+}
 int main(){
         // mergeLinkedListMain();
         // mergeKLinkedListMain();
         // findMiddleElementMain();
         // detectCycleMain();
         // removeCycleMain();
-        rotateByKMain();
+        // rotateByKMain();
+        // isPalindromeMain();
+        // oddEvenLLMain();
+        // reorderLinkedListMain();
+        swapAdjacentMain();
 }
