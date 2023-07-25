@@ -100,16 +100,16 @@ class node{
 };
 
 int main(){
-    // CircularLinkedList cll;
-    // cll.insertAtStart(3);
-    // cll.insertAtStart(1);
-    // cll.insertAtEnd(5);
-    // cll.insertAtEnd(7);
+    CircularLinkedList cll;
+    cll.insertAtStart(3);
+    cll.insertAtStart(1);
+    cll.insertAtEnd(5);
+    cll.insertAtEnd(7);
 
-    // cll.display();
-    // cll.deleteAtStart();
-    // cll.deleteAtEnd();
-    // cll.display();
+    cll.display();
+    cll.deleteAtStart();
+    cll.deleteAtEnd();
+    cll.display();
 
     node<int> *node1 = new node<int>(1);
     node<string> *node2 = new node<string>("Sudhir");
